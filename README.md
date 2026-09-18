@@ -45,7 +45,11 @@ The hero portrait uses `assets/img.jpeg`. Replace that file to change the photo.
 
 ## Pattern lab
 
-The bottom section runs a small Gray–Scott reaction–diffusion simulation in the browser. Visitors can choose a preset, change feed, kill, diffusion and speed, pause or restart, and draw new seeds on the canvas. It uses plain JavaScript and needs no external library.
+The bottom section runs a cat-catching game over a small Gray–Scott reaction–diffusion simulation. Each catch adds a new seed to the pattern; five catches win a round. Visitors can also choose a preset, change feed, kill, diffusion and speed, pause or restart, and draw new seeds on the canvas. It uses plain JavaScript and needs no external library.
+
+## Miscellaneous page
+
+`misc.html` shows favourite movies, anime and manhwa, with a link to Letterboxd. The 12 supplied covers live in `assets/movies`, `assets/anime` and `assets/manhwas`. Their original files stay intact; `style.css` applies grayscale, a red wash and a grain layer at 46% opacity to every cover. The shared grain texture is `assets/poster-grain.svg`.
 
 ## CV
 

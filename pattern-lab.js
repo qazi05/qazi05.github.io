@@ -10,6 +10,9 @@
   const size = width * height;
   const image = context.createImageData(width, height);
   const pixels = image.data;
+  const cat = document.getElementById('pattern-cat');
+  const scoreDisplay = document.getElementById('cat-score');
+  const goal = 5;
   const neighbors = Array.from({ length: 8 }, () => new Uint32Array(size));
   const presets = {
     spots: { feed: 0.035, kill: 0.065, diffusion: 0.50 },
@@ -49,6 +52,7 @@
   let visible = true;
   let lastFrame = 0;
   let drawing = false;
+  let score = 0;
 
   for (let y = 0; y < height; y++) {
     const up = (y + height - 1) % height;
@@ -77,7 +81,22 @@
 
   function updateStatus() {
     controls.toggle.textContent = running ? 'Pause' : 'Play';
-    controls.status.textContent = running ? 'Pattern growing' : 'Paused';
+    controls.status.textContent = score >= goal
+      ? 'You found all five cats! Start over for another round.'
+      : running ? 'Pattern growing' : 'Paused';
+  }
+
+  function moveCat() {
+    cat.style.left = `${12 + Math.random() * 76}%`;
+    cat.style.top = `${12 + Math.random() * 76}%`;
+  }
+
+  function resetGame() {
+    score = 0;
+    scoreDisplay.textContent = `0 / ${goal} cats found`;
+    cat.hidden = false;
+    moveCat();
+    updateStatus();
   }
 
   function seed(cx, cy, radius = 5) {
@@ -104,6 +123,7 @@
         3 + Math.floor(Math.random() * 5)
       );
     }
+    resetGame();
     render();
   }
 
@@ -177,6 +197,18 @@
     updateStatus();
   });
   controls.reset.addEventListener('click', startOver);
+  cat.addEventListener('click', () => {
+    if (score >= goal) return;
+    const x = Math.floor(parseFloat(cat.style.left) * width / 100);
+    const y = Math.floor(parseFloat(cat.style.top) * height / 100);
+    seed(x, y, 8);
+    score++;
+    scoreDisplay.textContent = `${score} / ${goal} cats found`;
+    if (score >= goal) cat.hidden = true;
+    else moveCat();
+    updateStatus();
+    render();
+  });
 
   canvas.addEventListener('pointerdown', event => {
     drawing = true;

@@ -228,17 +228,22 @@ h3 { letter-spacing: -.025em; }
 .timeline-row p { margin: 0; }
 
 .pattern-section { background: linear-gradient(180deg, var(--paper), #fff0e8); }
-.pattern-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
-.pattern-heading h2 { display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem; }
+.pattern-heading { margin-bottom: 2rem; }
+.pattern-heading h2 { margin-bottom: .9rem; }
 .pattern-intro { max-width: 670px; margin: 0; color: var(--muted); font-size: 1.08rem; }
-.cat-icon { width: 36px; height: 36px; flex: none; fill: var(--peach); stroke: var(--ember); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
-.cat-note { color: var(--rose); font-size: .78rem; white-space: nowrap; transform: rotate(-4deg); }
 .pattern-lab { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 1.5rem; align-items: start; }
 .pattern-stage, .pattern-controls { border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
 .pattern-stage { padding: 1rem; background: var(--cream); }
+.pattern-canvas-wrap { position: relative; }
 #pattern-canvas { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; border-radius: 14px; background: var(--paper); cursor: crosshair; touch-action: none; }
 #pattern-canvas:focus-visible { outline: 3px solid var(--ember); outline-offset: 4px; }
+.pattern-cat { position: absolute; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--ember); border-radius: 50%; background: var(--cream); box-shadow: 0 4px 14px rgba(65,36,38,.22); font-size: 20px; line-height: 1; cursor: pointer; transform: translate(-50%,-50%); transition: left .45s ease, top .45s ease, transform .18s ease; }
+.pattern-cat[hidden] { display: none; }
+.pattern-cat:hover { transform: translate(-50%,-50%) scale(1.12); }
+.pattern-cat:focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
+.pattern-stage-caption { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; }
 .pattern-hint { margin: .85rem .2rem .1rem; color: var(--muted); font-size: .83rem; }
+.cat-score { margin: .85rem .2rem .1rem; color: var(--ember); font-size: .83rem; font-weight: 800; white-space: nowrap; }
 .pattern-controls { padding: 1.5rem; background: rgba(255,255,255,.8); }
 .pattern-controls h3 { margin-bottom: 1.2rem; font-size: 1.2rem; color: var(--ember); }
 .control-label, .slider-label { display: flex; justify-content: space-between; gap: 1rem; font-size: .88rem; font-weight: 700; }
@@ -254,6 +259,34 @@ h3 { letter-spacing: -.025em; }
 .pattern-controls select:focus-visible, .pattern-controls input:focus-visible, .pattern-buttons button:focus-visible { outline: 3px solid var(--rose); outline-offset: 2px; }
 .pattern-status { min-height: 1.3em; margin: .9rem 0 0; color: var(--muted); font-size: .8rem; }
 .pattern-credit { margin: 1rem 0 0; color: var(--muted); font-size: .85rem; }
+
+.misc-teaser { background: var(--paper); }
+.misc-teaser-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--line); }
+.misc-teaser h2 { margin-bottom: .6rem; }
+.misc-teaser p:last-child { max-width: 620px; margin: 0; color: var(--muted); }
+.misc-teaser .button { flex: none; }
+
+.misc-hero {
+  padding: 5.5rem 0 5rem;
+  background: radial-gradient(circle at 85% 15%, var(--cream), transparent 42%), linear-gradient(180deg, #fffdfb, var(--paper));
+  border-bottom: 1px solid var(--line);
+}
+.misc-back { display: inline-block; margin-bottom: 3rem; color: var(--ember); font-weight: 750; text-decoration: none; }
+.misc-back:hover { text-decoration: underline; }
+.misc-hero h1 { max-width: none; margin-bottom: 1rem; font-size: clamp(3.5rem, 8vw, 6rem); }
+.misc-hero p:not(.section-kicker) { max-width: 650px; margin: 0 0 1.8rem; color: var(--muted); font-size: 1.15rem; }
+.misc-category { scroll-margin-top: 72px; }
+.misc-category h2 { margin-bottom: 2rem; }
+.poster-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.poster-card { min-width: 0; margin: 0; }
+.poster-art { position: relative; isolation: isolate; overflow: hidden; aspect-ratio: 2 / 3; border-radius: 16px; background: var(--cream); box-shadow: var(--shadow); }
+.poster-art img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.12); }
+.poster-art::before, .poster-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.poster-art::before { z-index: 1; background: var(--ember); opacity: .48; mix-blend-mode: color; }
+.poster-art::after { z-index: 2; background: url("assets/poster-grain.svg") repeat; opacity: .46; mix-blend-mode: soft-light; }
+.poster-card figcaption { display: flex; gap: .7rem; padding: .9rem .15rem 0; }
+.poster-rank { color: var(--rose); font-size: .78rem; font-weight: 850; line-height: 1.5; }
+.poster-card h3 { margin: 0; color: var(--ink); font-size: 1.08rem; line-height: 1.35; }
 
 .site-footer { border-top: 1px solid var(--line); }
 .footer-row {
@@ -276,8 +309,9 @@ h3 { letter-spacing: -.025em; }
   .timeline-row { grid-template-columns: 1fr; gap: .3rem; }
   .publication { grid-template-columns: 1fr; gap: .3rem; }
   .section { padding: 4.5rem 0; }
-  .pattern-heading { align-items: flex-start; }
   .pattern-controls { max-width: 520px; }
+  .misc-teaser-inner { align-items: flex-start; flex-direction: column; }
+  .poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 520px) {
@@ -285,9 +319,11 @@ h3 { letter-spacing: -.025em; }
   .brand span:last-child { display: none; }
   h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
   .hero-portrait { width: min(100%, 290px); }
-  .pattern-heading { display: block; }
-  .cat-note { display: inline-block; margin-top: .7rem; }
   .pattern-stage { padding: .6rem; }
   .pattern-hint { font-size: .75rem; }
+  .misc-hero { padding: 3.5rem 0; }
+  .misc-back { margin-bottom: 2rem; }
+  .poster-grid { gap: 1rem .7rem; }
+  .poster-card h3 { font-size: .95rem; }
   .footer-row { align-items: flex-start; flex-direction: column; justify-content: center; }
 }

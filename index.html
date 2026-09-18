@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#A23438" />
   <title>Qazi Saaheelur Rahaman</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,6 +24,7 @@
         <a href="#publications">Publications</a>
         <a href="#highlights">Highlights</a>
         <a href="#pattern-lab">Pattern lab</a>
+        <a href="misc.html">Miscellaneous</a>
       </nav>
     </div>
   </header>
@@ -152,20 +153,25 @@
         <div class="pattern-heading">
           <div>
             <p class="section-kicker">A little science to play with</p>
-            <h2>Turing pattern lab <svg class="cat-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 19 11 6l10 7a23 23 0 0 1 6 0L37 6l2 13a17 17 0 1 1-30 0Z"/><path d="M17 25h.1m14 0h.1M21 32q3 3 6 0m-3-3v3M8 30l-6-2m7 6-6 1m37-5 6-2m-7 6 6 1"/></svg></h2>
-            <p class="pattern-intro">Two chemicals spread and react to make spots, stripes and ripples. Choose a preset, adjust the parameters, or draw directly on the pattern.</p>
+            <h2>Catch the cat</h2>
+            <p class="pattern-intro">Find the little cat in a living Turing pattern. Each catch adds a new seed to the chemistry and sends the cat to a new hiding place. Change the settings to make spots, stripes and mazes.</p>
           </div>
-          <span class="cat-note" aria-hidden="true">tiny lab assistant: =^.^=</span>
         </div>
 
         <div class="pattern-lab">
           <div class="pattern-stage">
-            <canvas id="pattern-canvas" width="240" height="160" tabindex="0" aria-label="Interactive reaction-diffusion pattern. Draw with a pointer or press Enter to add a new seed.">Your browser does not support this pattern canvas.</canvas>
-            <p class="pattern-hint">Draw on the canvas to make new shapes · Press Enter when focused to add a seed</p>
+            <div class="pattern-canvas-wrap">
+              <canvas id="pattern-canvas" width="240" height="160" tabindex="0" aria-label="Interactive reaction-diffusion pattern. Draw with a pointer or press Enter to add a new seed.">Your browser does not support this pattern canvas.</canvas>
+              <button id="pattern-cat" class="pattern-cat" type="button" aria-label="Catch the cat" style="left:50%;top:50%">🐈</button>
+            </div>
+            <div class="pattern-stage-caption">
+              <p class="pattern-hint">Catch the cat five times to win · Draw on the canvas to stir the pattern</p>
+              <p id="cat-score" class="cat-score" role="status" aria-live="polite">0 / 5 cats found</p>
+            </div>
           </div>
 
           <div class="pattern-controls">
-            <h3>Shape the pattern</h3>
+            <h3>Tune the pattern</h3>
             <label class="control-label" for="pattern-preset">Starting pattern</label>
             <select id="pattern-preset">
               <option value="spots">Spots</option>
@@ -190,7 +196,18 @@
             <p id="pattern-status" class="pattern-status" role="status" aria-live="polite">Pattern growing</p>
           </div>
         </div>
-        <p class="pattern-credit">Inspired by Alan Turing’s reaction–diffusion idea. The exact shapes emerge as the simulation runs.</p>
+        <p class="pattern-credit">The background is a Gray–Scott reaction–diffusion simulation inspired by Alan Turing’s pattern-forming idea.</p>
+      </div>
+    </section>
+
+    <section class="section misc-teaser">
+      <div class="shell misc-teaser-inner">
+        <div>
+          <p class="section-kicker">Beyond the lab</p>
+          <h2>Stories I keep coming back to</h2>
+          <p>Films, anime and manhwa that stayed with me, gathered on a separate shelf.</p>
+        </div>
+        <a class="button primary" href="misc.html">Explore miscellaneous ↗</a>
       </div>
     </section>
   </main>
@@ -202,7 +219,7 @@
     </div>
   </footer>
 
-  <script src="pattern-lab.js" defer></script>
+  <script src="pattern-lab.js?v=2" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
