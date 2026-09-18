@@ -35,35 +35,23 @@ Useful places to customize:
 - Research cards: `#research`
 - Publications: `#publications`
 - Scientific activities: `#highlights`
-- Email/contact links: search for `qazisr20@iiserbpr.ac.in`
+- Email/contact links: search for `saaheelur-rahaman.QAZI@univ-amu.fr`
 - Google Scholar URL: search for `FJB0mhMAAAAJ`
+- Turing pattern presets and simulation: `pattern-lab.js`
 
-## Add a profile photo later
+## Profile photo
 
-The current design uses a `QSR` monogram, so it works immediately without a photo.
+The hero portrait uses `assets/img.jpeg`. Replace that file to change the photo.
 
-If you later want a photo, add `assets/profile.jpg` and replace the `div` with class `monogram` by an image. Example:
+## Pattern lab
 
-```html
-<img class="profile-photo" src="assets/profile.jpg" alt="Qazi Saaheelur Rahaman" />
-```
-
-Then add to `style.css`:
-
-```css
-.profile-photo {
-  width: 148px;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 42% 58% 55% 45% / 45% 44% 56% 55%;
-}
-```
+The bottom section runs a small Gray–Scott reaction–diffusion simulation in the browser. Visitors can choose a preset, change feed, kill, diffusion and speed, pause or restart, and draw new seeds on the canvas. It uses plain JavaScript and needs no external library.
 
 ## CV
 
 The current CV is included at:
 
-`assets/Qazi_Saaheelur_Rahaman_CV.pdf`
+`assets/resume.pdf`
 
 Replace this PDF whenever you update your CV; the website button will continue to work.
 
