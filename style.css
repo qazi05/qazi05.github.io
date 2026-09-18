@@ -152,54 +152,21 @@ h3 { letter-spacing: -.025em; }
 .button.secondary { border: 1px solid var(--line); background: rgba(255,255,255,.65); }
 .text-link { font-weight: 750; color: var(--ember); text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
-.hero-card {
-  min-height: 360px;
-  border-radius: 36px;
-  background: rgba(255,255,255,.68);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-.hero-card::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 48% 52% 58% 42% / 55% 38% 62% 45%;
-  background: linear-gradient(145deg, var(--peach), var(--blush));
-  right: -75px;
-  top: -90px;
-  opacity: .82;
-}
-.monogram {
-  position: relative;
-  z-index: 1;
-  width: 148px;
+.hero-portrait {
+  width: min(100%, 390px);
   aspect-ratio: 1;
+  margin: 0;
+  justify-self: end;
+  overflow: hidden;
+  border: 10px solid rgba(255,255,255,.7);
   border-radius: 42% 58% 55% 45% / 45% 44% 56% 55%;
-  display: grid;
-  place-items: center;
-  background: var(--ember);
-  color: var(--cream);
-  font-size: 2.3rem;
-  font-weight: 850;
-  letter-spacing: -.06em;
+  box-shadow: var(--shadow);
 }
-.hero-card-copy {
-  display: grid;
-  gap: .3rem;
-  position: relative;
-  z-index: 1;
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.hero-card-copy strong { font-size: 1.1rem; }
-.hero-card-copy span { color: var(--muted); }
-.palette-strip { display: grid; grid-template-columns: repeat(5,1fr); gap: .42rem; margin-top: 1.2rem; }
-.palette-strip span { height: 9px; border-radius: 99px; background: var(--swatch); }
 .hero-wave {
   height: 28px;
   background: linear-gradient(90deg, var(--ember), var(--rose), var(--blush), var(--peach), var(--cream));
@@ -289,7 +256,7 @@ h3 { letter-spacing: -.025em; }
   .nav { display: none; }
   .hero-grid, .two-col, .contact-card { grid-template-columns: 1fr; }
   .hero-grid { gap: 2.5rem; padding: 5rem 0 5rem; }
-  .hero-card { min-height: 300px; }
+  .hero-portrait { justify-self: start; width: min(100%, 340px); }
   .research-grid { grid-template-columns: 1fr; }
   .section-heading-row { align-items: flex-start; flex-direction: column; gap: .5rem; }
   .timeline-row { grid-template-columns: 1fr; gap: .3rem; }
@@ -302,6 +269,6 @@ h3 { letter-spacing: -.025em; }
   .shell { width: min(calc(100% - 1.4rem), var(--shell)); }
   .brand span:last-child { display: none; }
   h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
-  .hero-card { padding: 1.4rem; }
+  .hero-portrait { width: min(100%, 290px); }
   .footer-row { align-items: flex-start; flex-direction: column; justify-content: center; }
 }
