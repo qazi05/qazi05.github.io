@@ -1,12 +1,12 @@
 # Qazi Saaheelur Rahaman — GitHub Pages site
 
-A simple one-page academic website using the colour palette sampled from the supplied ocean image:
+A simple one-page academic website using the Sunset Ember colour palette:
 
-- `#EDE397` — sand
-- `#60BF9A` — mint
-- `#03AB83` — jade
-- `#006A5C` — teal
-- `#054043` — deep teal
+- `#A23438` — ember
+- `#BB5E61` — rose
+- `#D99C97` — blush
+- `#F3C9AF` — peach
+- `#FBE3D0` — cream
 
 ## Quick deploy on GitHub Pages
 
