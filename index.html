@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#A23438" />
   <title>Qazi Saaheelur Rahaman</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -23,8 +23,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#highlights">Highlights</a>
-        <a href="#pattern-lab">Pattern lab</a>
-        <a href="misc.html">Miscellaneous</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -113,26 +112,6 @@
 
         <div class="publication-list">
           <article class="publication">
-            <div class="pub-year">2026</div>
-            <div>
-              <h3>DARE: Division Axis and Region Estimation from 2D and 3D Time-Lapse Images</h3>
-              <p>Romain Karpinski, Alice Gros, Marc Karnat, <strong>Qazi Saaheelur Rahaman</strong>, Jules Vanaret, Mehdi Saadaoui, Sham Tlili, Jean-François Rupprecht</p>
-              <p class="pub-meta">bioRxiv preprint · equal contribution by the first four authors</p>
-              <a href="https://doi.org/10.1101/2024.02.05.578987" target="_blank" rel="noopener">Preprint ↗</a>
-            </div>
-          </article>
-
-          <article class="publication">
-            <div class="pub-year">2025</div>
-            <div>
-              <h3>Noninvasive rheological inference from stable flows in confined tissues</h3>
-              <p>Marc Karnat, Gautham Hari Narayana, Sudheer Kumar Peneti, Victoria Guglielmotti, <strong>Qazi Saaheelur Rahaman</strong>, Shreyansh Jain, Benoît Ladoux, Shao-Zhen Lin, Sham Tlili, René-Marc Mège, Jean-François Rupprecht</p>
-              <p class="pub-meta">arXiv:2511.20155</p>
-              <a href="https://arxiv.org/abs/2511.20155" target="_blank" rel="noopener">Preprint ↗</a>
-            </div>
-          </article>
-
-          <article class="publication">
             <div class="pub-year">2025</div>
             <div>
               <h3>Collective dynamics of multiplex networks with distinct adaptation rules</h3>
@@ -169,66 +148,17 @@
       </div>
     </section>
 
-    <section class="section pattern-section" id="pattern-lab">
-      <div class="shell">
-        <div class="pattern-heading">
-          <div>
-            <p class="section-kicker">A little science to play with</p>
-            <h2>Catch the cat</h2>
-            <p class="pattern-intro">Find the little cat in a living Turing pattern. Each catch adds a new seed to the chemistry and sends the cat to a new hiding place. Change the settings to make spots, stripes and mazes.</p>
-          </div>
-        </div>
-
-        <div class="pattern-lab">
-          <div class="pattern-stage">
-            <div class="pattern-canvas-wrap">
-              <canvas id="pattern-canvas" width="240" height="160" tabindex="0" aria-label="Interactive reaction-diffusion pattern. Draw with a pointer or press Enter to add a new seed.">Your browser does not support this pattern canvas.</canvas>
-              <button id="pattern-cat" class="pattern-cat" type="button" aria-label="Catch the cat" style="left:50%;top:50%">🐈</button>
-            </div>
-            <div class="pattern-stage-caption">
-              <p class="pattern-hint">Catch the cat five times to win · Draw on the canvas to stir the pattern</p>
-              <p id="cat-score" class="cat-score" role="status" aria-live="polite">0 / 5 cats found</p>
-            </div>
-          </div>
-
-          <div class="pattern-controls">
-            <h3>Tune the pattern</h3>
-            <label class="control-label" for="pattern-preset">Starting pattern</label>
-            <select id="pattern-preset">
-              <option value="spots">Spots</option>
-              <option value="stripes">Stripes</option>
-              <option value="maze" selected>Maze</option>
-              <option value="coral">Coral</option>
-            </select>
-
-            <label class="slider-label" for="feed-rate"><span>Feed rate</span><output id="feed-value" for="feed-rate">0.029</output></label>
-            <input id="feed-rate" type="range" min="0.010" max="0.080" step="0.001" value="0.029" />
-            <label class="slider-label" for="kill-rate"><span>Kill rate</span><output id="kill-value" for="kill-rate">0.057</output></label>
-            <input id="kill-rate" type="range" min="0.040" max="0.075" step="0.001" value="0.057" />
-            <label class="slider-label" for="diffusion-rate"><span>Diffusion</span><output id="diffusion-value" for="diffusion-rate">0.50</output></label>
-            <input id="diffusion-rate" type="range" min="0.20" max="0.80" step="0.01" value="0.50" />
-            <label class="slider-label" for="pattern-speed"><span>Speed</span><output id="speed-value" for="pattern-speed">5</output></label>
-            <input id="pattern-speed" type="range" min="1" max="10" step="1" value="5" />
-
-            <div class="pattern-buttons">
-              <button id="pattern-toggle" type="button">Pause</button>
-              <button id="pattern-reset" type="button">Start over</button>
-            </div>
-            <p id="pattern-status" class="pattern-status" role="status" aria-live="polite">Pattern growing</p>
-          </div>
-        </div>
-        <p class="pattern-credit">The background is a Gray–Scott reaction–diffusion simulation inspired by Alan Turing’s pattern-forming idea.</p>
-      </div>
-    </section>
-
-    <section class="section misc-teaser">
-      <div class="shell misc-teaser-inner">
+    <section class="section" id="contact">
+      <div class="shell contact-card">
         <div>
-          <p class="section-kicker">Beyond the lab</p>
-          <h2>Stories I keep coming back to</h2>
-          <p>Films, anime and manhwa that stayed with me, gathered on a separate shelf.</p>
+          <p class="section-kicker">Contact</p>
+          <h2>Want to discuss science or collaborate?</h2>
+          <p class="contact-copy">The easiest way to reach me is by email.</p>
         </div>
-        <a class="button primary" href="misc.html">Explore miscellaneous ↗</a>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:saaheelur-rahaman.QAZI@univ-amu.fr">saaheelur-rahaman.QAZI@univ-amu.fr</a>
+          <a class="text-link" href="https://scholar.google.com/citations?user=FJB0mhMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+        </div>
       </div>
     </section>
   </main>
@@ -240,7 +170,6 @@
     </div>
   </footer>
 
-  <script src="pattern-lab.js?v=2" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
